@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Opret Kunde</title>
+</head>
+<body>
+
+    <form action="/opretKunde" method="post">
+        <input type="tel" name="telefonNummer" placeholder="indtast telefonnummer">
+        <input type="text" name="Navn" placeholder="indtast dit navn">
+        <input type="email" name="email" placeholder="indtast E-mail">
+        <input type="text" name="firmaNavn" placeholder="indtast firma navn">
+        <button type="submit">Videre</button>
+
+    </form>
+
+    <form th:object="${kunde}" th:action="@{/opretBooking}" method="get">
+        <input type="text" name="search" id="search" th:value="${search}" placeholder="Søg kunde"/>
+        <input type="submit" value="Search"/>
+        <div th:if="${not #lists.isEmpty(search)}">
+            <h2>liste</h2>
+            <tr>
+                <th>telefonNummer</th>
+                <th>navn</th>
+                <th>email</th>
+            </tr>
+            <tr th:each="kunde: ${search}">
+
+            </tr>
+        </div>
+
+        <button type="submit">Søg</button>
+    </form>
+
+</body>
+</html>

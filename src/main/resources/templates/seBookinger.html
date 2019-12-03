@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Se bookinger</title>
+</head>
+<body>
+        <p th:each="kunde :${samletBookinger}">
+
+            <span th:text="${kunde.Navn}"/>
+            <span th:text="${kunde.TelefonNummer}"/>
+            <span th:text="${kunde.Pax}"/>
+            <span th:text="${kunde.Dato}"/>
+
+
+            <a style="color: blue" th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer}}"> Opdater Booking</a>
+            <a style="color: red" th:href="@{'/slet/' + ${kunde.telefonNummer}}"> Slet booking</a>
+
+
+</body>
+</html>
