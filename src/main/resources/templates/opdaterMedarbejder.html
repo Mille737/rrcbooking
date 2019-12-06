@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdater Medarbejder</title>
+</head>
+<body>
+<form action="/opdaterMedarbejder" method="post">
+
+    <input type="tel" name="maTelefonNummer" th:value="${medarbejder.maTelefonNummer}">
+    <input type="text" name="maNavn" th:value="${medarbejder.maNavn}">
+    <input type="email" name="maEmail" th:value="${medarbejder.maEmail}">
+
+    <button type="submit">Opdatér & Gem</button>
+
+</form>
+</body>
+</html>

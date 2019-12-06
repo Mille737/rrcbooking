@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Se Medarbjeder</title>
+</head>
+<body>
+<p th:each="medarbejder :${medarbejderInfo}">
+
+    <span th:text="${medarbejder.maNavn}"/>
+    <span th:text="${medarbejder.maTelefonNummer}"/>
+    <span th:text="${medarbejder.maEmail}"/>
+
+    <a style="color: blue" th:href="@{'/opdaterMedarbejder/' + ${medarbejder.maTelefonNummer}}"> Opdater medarbejder</a>
+    <a style="color: red" th:href="@{'/sletMedarbejder/' + ${medarbejder.maTelefonNummer}}"> Slet medarbejder</a>
+
+</body>
+</html>
