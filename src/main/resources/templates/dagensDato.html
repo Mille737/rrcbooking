@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dagens Dato</title>
+</head>
+<body>
+
+<div th:each="booking :${udvalgtbooking}">
+
+    <p>Dato</p>
+    <span th:text="${booking.Dato}"/>
+    <p>Pax</p>
+    <span th:text="${booking.Pax}"/>
+    <p>Tid</p>
+    <span th:text="${booking.Tid}"/>
+    <p>Varighed</p>
+    <span th:text="${booking.Varighed}"/>
+    <p>Evt, Kommentar</p>
+    <span th:text="${booking.Kommentar}"/>
+
+</div>
+</body>
+</html>

@@ -2,6 +2,7 @@ package com.example.rrcbooking.Controller;
 
 import com.example.rrcbooking.Model.Booking;
 import com.example.rrcbooking.Model.Kunde;
+import com.example.rrcbooking.Model.ValgtDato;
 import com.example.rrcbooking.Service.BookingService;
 import com.example.rrcbooking.Service.KundeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,6 +84,20 @@ public class BookingController {
         bookingService.opdaterBooking(kunde);
         System.out.println("Gemt ja1");
         return "redirect:/seBookinger";
+    }
+
+    // søg booking via dato
+    @PostMapping("/dagensDato/{valgtDato}")
+    public String findDato(@ModelAttribute ValgtDato dato){
+        dato.setValgtDato("valgtDato");
+        return "dagensDato";
+    }
+
+    //vis bookinger med valgte dato
+    @GetMapping("/dagensDato/{valgtDato}")
+    public String valgtBookingDato(@PathVariable("valgtDato") String vd, Model model) {
+        model.addAttribute("udvalgtbooking", bookingService.valgtBookingDato(vd));
+        return "dagensDato";
     }
 
 }

@@ -2,6 +2,8 @@ package com.example.rrcbooking.Repository;
 
 import com.example.rrcbooking.Model.Booking;
 import com.example.rrcbooking.Model.Kunde;
+import com.example.rrcbooking.Model.ValgtDato;
+import org.hibernate.type.AnyType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -62,6 +64,11 @@ public class BookingRepo {
                         kunde.getKommentar(),
                         kunde.getTelefonNummer());
         System.out.println("Gemt ja");
+    }
+    public List<Booking> valgtBookingDato(String valgtDato){
+        String sqlvalgtDato = "SELECT * FROM gokarteksamen.booking INNER JOIN gokarteksamen.kunde ON kunde.TelefonNummer = booking.kunde_TelefonNummer WHERE booking.Dato = ?";
+        RowMapper<Booking> rowMapper = new BeanPropertyRowMapper<>(Booking.class);
+        return template.query(sqlvalgtDato, rowMapper, valgtDato);
     }
 
 }
