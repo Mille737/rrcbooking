@@ -59,22 +59,28 @@ public class BookingController {
 
     //Slet
     @GetMapping("/slet/{telefonNummer}")
-    public String slet(@PathVariable("telefonNummer") int telefonNummer){
-        bookingService.sletBooking(telefonNummer);
+    public String slet(@PathVariable("telefonNummer") int telefonNummer, String dato){
+        bookingService.sletBooking(telefonNummer, dato);
         return "redirect:/seBookinger";
     }
 
     //Søg
-    @GetMapping(value = "kunder")
-    public String søg(@RequestParam(value = "telefonNummer", required = false) String telefonNummer, Model model) {
-        model.addAttribute("search", kundeService.søgKunde(telefonNummer));
-        return "opretBookinger";
+    @GetMapping("/opdaterKunde/{telefonNummer}")
+    public String søg(@PathVariable("telefonNummer") String telefonNummer, Model model) {
+        model.addAttribute("sog", kundeService.søgKunde(telefonNummer));
+        return "opdaterKunde";
+    }
+
+    @PostMapping("/opdaterKunde")
+    public String fundetKunde(@ModelAttribute Kunde kunde) {
+        kundeService.fundetKunde(kunde);
+        return "opretBooking";
     }
 
     //Opdater
-    @GetMapping("/opdaterBooking/{telefonNummer}")
-    public String opdater(@PathVariable("telefonNummer") int telefonNummer, Model model){
-        model.addAttribute("kunde", bookingService.findBookingTlf(telefonNummer));
+    @GetMapping("/opdaterBooking/{tele1}/{dato}")
+    public String opdater(@PathVariable("tele1") int telefonNummer, @PathVariable("dato") String dato, Model model){
+        model.addAttribute("kunde", bookingService.findBookingTlf(telefonNummer, dato));
         return "opdaterBooking";
     }
 
@@ -90,12 +96,6 @@ public class BookingController {
     @GetMapping("/dagensDato/{valgtDato}")
     public String valgtBookingDato(@PathVariable("valgtDato") String vd, Model model) {
         model.addAttribute("udvalgtbooking", bookingService.valgtBookingDato(vd));
-        return "dagensDato";
-    }
-
-    // søg booking via dato
-    @PostMapping("/dagensDato/{valgtDato}")
-    public String findDato(){
         return "dagensDato";
     }
 }

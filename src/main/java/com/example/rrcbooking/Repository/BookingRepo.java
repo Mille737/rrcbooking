@@ -42,28 +42,28 @@ public class BookingRepo {
     }
 
     //Slet
-    public void sletBooking(int telefonNummer){
-        String sletsql = "DELETE FROM Booking WHERE Kunde_TelefonNummer = ?";
-        template.update(sletsql, telefonNummer);
+    public void sletBooking(int telefonNummer, String dato){
+        String sletsql = "DELETE FROM Booking WHERE Kunde_TelefonNummer = ? AND Dato = ?";
+        template.update(sletsql, telefonNummer, dato);
     }
 
     //Update
-    public Kunde findBookingTlf(int telefonNummer){
-        String sqlfind = "SELECT * FROM Kunde INNER JOIN Booking ON Kunde.TelefonNummer = booking.Kunde_TelefonNummer WHERE Booking.Kunde_TelefonNummer = ?";
+    public Kunde findBookingTlf(int telefonNummer, String dato){
+        String sqlfind = "SELECT * FROM Kunde INNER JOIN Booking ON Kunde.TelefonNummer = booking.Kunde_TelefonNummer WHERE Booking.Kunde_TelefonNummer = ? AND booking.Dato = ?";
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
-        return template.queryForObject(sqlfind, rowMapper, telefonNummer);
+        return template.queryForObject(sqlfind, rowMapper, telefonNummer, dato);
     }
 
     public void opdaterBooking(Kunde kunde){
-        String sqlOpdater = "UPDATE Booking SET Dato = ?, Tid = ?, Varighed = ?, Pax = ?, Kommentar = ? WHERE kunde_TelefonNummer = ?";
+        String sqlOpdater = "UPDATE gokarteksamen.Booking SET Tid = ?, Varighed = ?, Pax = ?, Kommentar = ? WHERE kunde_TelefonNummer = ? AND Dato = ?";
         template.update(sqlOpdater,
-                        kunde.getDato(),
-                        kunde.getTid(),
-                        kunde.getVarighed(),
-                        kunde.getPax(),
-                        kunde.getKommentar(),
-                        kunde.getTelefonNummer());
-        System.out.println("Gemt ja");
+                kunde.getTid(),
+                kunde.getVarighed(),
+                kunde.getPax(),
+                kunde.getKommentar(),
+                kunde.getTele1(),
+                kunde.getDato());
+        System.out.println("Gemt ja" + kunde.getPax() + sqlOpdater);
     }
     public List<Kunde> valgtBookingDato(String valgtDato){
         String sqlvalgtDato = "SELECT * FROM gokarteksamen.booking INNER JOIN gokarteksamen.kunde ON kunde.TelefonNummer = booking.kunde_TelefonNummer WHERE booking.Dato = ?";

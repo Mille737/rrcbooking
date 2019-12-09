@@ -20,19 +20,20 @@ public class BookingService {
     public void opretBooking(Booking booking, Kunde kunde){
         bookingRepo.opretBooking(booking, kunde);
     }
-
+    //se
     public List<Kunde> bookingList(){
         return bookingRepo.bookingListe();
     }
 
+
     //Slet
-    public void sletBooking(int telefonNummer){
-        bookingRepo.sletBooking(telefonNummer);
+    public void sletBooking(int telefonNummer, String dato){
+        bookingRepo.sletBooking(telefonNummer, dato);
     }
 
     //Opdater
-    public Kunde findBookingTlf(int telefonNummer){
-        return bookingRepo.findBookingTlf(telefonNummer);
+    public Kunde findBookingTlf(int telefonNummer, String dato){
+        return bookingRepo.findBookingTlf(telefonNummer, dato);
     }
 
     public void opdaterBooking(Kunde kunde){

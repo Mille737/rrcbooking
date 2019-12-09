@@ -13,7 +13,7 @@
             <span th:text="${kunde.Dato}"/>
 
 
-            <a style="color: blue" th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer}}"> Opdater Booking</a>
+            <a style="color: blue" th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Opdater Booking</a>
             <a style="color: red" th:href="@{'/slet/' + ${kunde.telefonNummer}}"> Slet booking</a>
 
 

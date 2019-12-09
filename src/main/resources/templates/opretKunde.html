@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Opret Kunde</title>
+    <!-- Importerer jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -15,23 +17,21 @@
 
     </form>
 
-    <form th:object="${kunde}" th:action="@{/opretBooking}" method="get">
-        <input type="text" name="search" id="search" th:value="${search}" placeholder="Søg kunde"/>
-        <input type="submit" value="Search"/>
-        <div th:if="${not #lists.isEmpty(search)}">
-            <h2>liste</h2>
-            <tr>
-                <th>telefonNummer</th>
-                <th>navn</th>
-                <th>email</th>
-            </tr>
-            <tr th:each="kunde: ${search}">
-
-            </tr>
-        </div>
-
-        <button type="submit">Søg</button>
+    <form id="telefon-form">
+        <input type="tel" id="input-valg-telefon" name="valgtTelefonnummer" placeholder="vælg ønsklet telefonnummer">
+        <button type="submit">Find Kunde</button>
     </form>
+    <script>
+        // $ er jQuery referencen
+        // parameter er id på ønsket element
+        $( "#telefon-form" ).submit( function() {
+            //.val() getter value fra input element
+            var value = $( "#input-valg-telefon" ).val();
+            var url = "opdaterKunde/" + value;
+            window.location.href = url;
+            return false;
+        } );
+    </script>
 
 </body>
 </html>

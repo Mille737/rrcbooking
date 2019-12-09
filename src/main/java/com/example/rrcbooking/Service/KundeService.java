@@ -22,9 +22,14 @@ public class KundeService {
         return kundeRepo.kundeListe();
     }
 
-    //Søg VIRKER IKKER!!!
-    public Kunde søgKunde(String telefonNummer){
+    //Søg på kunde via telefonnummer
+    public List<Kunde> søgKunde(String telefonNummer){
         return kundeRepo.søgKunde(telefonNummer);
+    }
+
+    //fundetKunde
+    public void fundetKunde(Kunde kunde) {
+        kundeRepo.fundetKunde(kunde);
     }
 
 }

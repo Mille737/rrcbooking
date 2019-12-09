@@ -12,18 +12,19 @@ public class Kunde extends Booking{
     private String email;
     private String firmaNavn;
     private Booking booking;
+    private String tele1;
 
 
     public Kunde() {
     }
 
-    public Kunde(String telefonNummer, String navn, String email, String firmaNavn, Booking booking) {
+    public Kunde(String telefonNummer, String navn, String email, String firmaNavn, Booking booking, String tele1) {
         this.telefonNummer = telefonNummer;
         this.navn = navn;
         this.email = email;
         this.firmaNavn = firmaNavn;
         this.booking = new Booking(getBookingID(),getDato(),getTid(),getVarighed(),getPax(),getKommentar());
-
+        this.tele1 = tele1;
     }
 
     public String getTelefonNummer() {
@@ -64,6 +65,14 @@ public class Kunde extends Booking{
 
     public void setBooking(Booking booking) {
         this.booking = booking;
+    }
+
+    public String getTele1() {
+        return tele1;
+    }
+
+    public void setTele1(String tele1) {
+        this.tele1 = tele1;
     }
 }
 

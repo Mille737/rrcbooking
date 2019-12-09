@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Opdater Kunde</title>
+</head>
+<body>
+<div th:each="kunde :${sog}">
+
+<form action="/opdaterKunde" method="post">
+
+    <input type="text" name="Navn" th:value="${kunde.Navn}">
+    <input type="tel" name="TelefonNummer" th:value="${kunde.telefonNummer}">
+    <input type="email" name="email" th:value="${kunde.email}">
+    <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}">
+
+    <button type="submit">Videre til booking</button>
+
+</form>
+</div>
+</body>
+</html>

@@ -6,21 +6,23 @@
 </head>
 <body>
 
+<div th:each="kunde :${kunde}">
+
     <form action="/opdaterBooking" method="post">
 
-        <input type="tel" name="TelefonNummer" th:value="${kunde.telefonNummer}">
-        <input type="date" name="Dato" th:value="${kunde.dato}">
+
+
         <input type="time" name="Tid" th:value="${kunde.tid}">
         <input type="number" min="30" step="30" th:value="${kunde.varighed}">
         <input type="number" name="Pax" min="1" th:value="${kunde.pax}">
         <input type="text" name="Kommentar" th:value="${kunde.kommentar}">
-        <input type="text" name="Navn" th:value="${kunde.Navn}">
-        <input type="email" name="email" th:value="${kunde.email}">
-        <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}">
+        <input type="hidden" name="Telefonnummer" th:value="${kunde.telefonNummer}">
+        <input type ="hidden" name="tele1" th:value="${kunde.telefonNummer}">
+        <input type="date" name="Dato" th:value="${kunde.dato}">
 
         <button type="submit">Opdatér & Gem</button>
 
     </form>
-
+</div>
 </body>
 </html>

@@ -32,10 +32,20 @@ public class KundeRepo {
                 kunde.getFirmaNavn());
     }
 
-    //søg VIRKER IKKE ENDNU!!
-    public Kunde søgKunde(String telefonNummer){
+    //find kunde
+    public List<Kunde> søgKunde(String telefonNummer){
         String søgsql = "SELECT * FROM Kunde WHERE TelefonNummer = ?";
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
-        return template.queryForObject(søgsql, rowMapper, telefonNummer);
+        return template.query(søgsql, rowMapper, telefonNummer);
+    }
+
+    //Fundet kunden
+    public void fundetKunde(Kunde kunde){
+        String sqlOpdater = "UPDATE Kunde SET Navn = ?, Email = ?, FirmaNavn = ? WHERE TelefonNummer = ?";
+        template.update(sqlOpdater,
+                kunde.getNavn(),
+                kunde.getEmail(),
+                kunde.getFirmaNavn(),
+                kunde.getTelefonNummer());
     }
 }
