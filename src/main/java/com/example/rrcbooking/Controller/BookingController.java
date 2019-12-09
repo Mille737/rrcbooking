@@ -2,7 +2,6 @@ package com.example.rrcbooking.Controller;
 
 import com.example.rrcbooking.Model.Booking;
 import com.example.rrcbooking.Model.Kunde;
-import com.example.rrcbooking.Model.ValgtDato;
 import com.example.rrcbooking.Service.BookingService;
 import com.example.rrcbooking.Service.KundeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,12 +85,6 @@ public class BookingController {
         return "redirect:/seBookinger";
     }
 
-    // søg booking via dato
-    @PostMapping("/dagensDato/{valgtDato}")
-    public String findDato(@ModelAttribute ValgtDato dato){
-        dato.setValgtDato("valgtDato");
-        return "dagensDato";
-    }
 
     //vis bookinger med valgte dato
     @GetMapping("/dagensDato/{valgtDato}")
@@ -100,4 +93,9 @@ public class BookingController {
         return "dagensDato";
     }
 
+    // søg booking via dato
+    @PostMapping("/dagensDato/{valgtDato}")
+    public String findDato(){
+        return "dagensDato";
+    }
 }

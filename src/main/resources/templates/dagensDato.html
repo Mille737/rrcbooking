@@ -6,18 +6,22 @@
 </head>
 <body>
 
-<div th:each="booking :${udvalgtbooking}">
+<div th:each="kunde :${udvalgtbooking}">
 
+    <p>Navn</p>
+    <span th:text="${kunde.Navn}"/>
+    <p>Telefonnummer</p>
+    <span th:text="${kunde.TelefonNummer}"/>
     <p>Dato</p>
-    <span th:text="${booking.Dato}"/>
+    <span th:text="${kunde.Dato}"/>
     <p>Pax</p>
-    <span th:text="${booking.Pax}"/>
+    <span th:text="${kunde.Pax}"/>
     <p>Tid</p>
-    <span th:text="${booking.Tid}"/>
+    <span th:text="${kunde.Tid}"/>
     <p>Varighed</p>
-    <span th:text="${booking.Varighed}"/>
+    <span th:text="${kunde.Varighed}"/>
     <p>Evt, Kommentar</p>
-    <span th:text="${booking.Kommentar}"/>
+    <span th:text="${kunde.Kommentar}"/>
 
 </div>
 </body>
