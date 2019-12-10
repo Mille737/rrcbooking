@@ -24,10 +24,7 @@ public class BookingService {
     public void opretBooking(Booking booking, Kunde kunde){
         bookingRepo.opretBooking(booking, kunde);
     }
-    //se
-    public List<Kunde> bookingList(){
-        return bookingRepo.bookingListe();
-    }
+
 
 
     //Slet

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Se bookinger</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Importerer jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -26,27 +28,41 @@
 </script>
 
         <!-- Viser bookinger med den udvalgt dato -->
-        <div th:each="kunde :${udvalgtbooking}">
-            <label>Navn: </label>
-        <div th:text="${kunde.Navn}"/>
-            <label>Telefonnummer: </label>
-        <div th:text="${kunde.TelefonNummer}"/>
-            <label>Dato: </label>
-        <div th:text="${kunde.Dato}"/>
-            <label>Pax: </label>
-        <div th:text="${kunde.Pax}"/>
-            <label>Tid: </label>
-        <div th:text="${kunde.Tid}"/>
-            <label>Varighed: </label>
-        <div th:text="${kunde.Varighed}"/>
-            <label>Evt, Kommentar: </label>
-        <div th:text="${kunde.Kommentar}"/>
-       <!-- ------ -->
+            <table class="table">
+            <thead>
+            <tr>
+                <th>Tid</th>
+                <th>Varighed</th>
+                <th>Pax</th>
+                <th>Navn</th>
+                <th>Telefonnummer</th>
+                <th>Evt, Kommentar</th>
+                <th>Dato</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+                <div th:each="kunde :${udvalgtbooking}">
+            <tbody>
+            <tr>
+                <td th:text="${kunde.Tid}"></td>
+                <td th:text="${kunde.Varighed}"></td>
+                <td th:text="${kunde.Pax}"></td>
+                <td th:text="${kunde.Navn}"></td>
+                <td th:text="${kunde.TelefonNummer}"></td>
+                <td th:text="${kunde.Kommentar}"></td>
+                <td th:text="${kunde.Dato}"></td>
+                <td><a th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Opdater Booking</a></td>
+                <td><a th:href="@{'/slet/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Slet booking</a></td>
+            </tr>
+            </tbody>
+                </div>
 
-
-        <a th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Opdater Booking</a>
-        <a th:href="@{'/slet/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Slet booking</a>
-
-        </div>
+        </table>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

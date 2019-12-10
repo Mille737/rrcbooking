@@ -19,13 +19,6 @@ public class BookingRepo {
     JdbcTemplate template;
 
 
-    //Se
-    public List<Kunde> bookingListe(){
-        String sqlallebookinger = "SELECT * FROM Kunde INNER JOIN Booking ON Kunde.TelefonNummer = booking.Kunde_TelefonNummer";
-        RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
-        return template.query(sqlallebookinger, rowMapper);
-    }
-
     //Opret
     public void opretBooking(Booking booking, Kunde kunde){
 
@@ -67,7 +60,7 @@ public class BookingRepo {
     }
 
     public List<Kunde> valgtBookingDato(String valgtDato){
-        String sqlvalgtDato = "SELECT * FROM gokarteksamen.booking INNER JOIN gokarteksamen.kunde ON kunde.TelefonNummer = booking.kunde_TelefonNummer WHERE booking.Dato = ?";
+        String sqlvalgtDato = "SELECT * FROM gokarteksamen.booking INNER JOIN gokarteksamen.kunde ON kunde.TelefonNummer = booking.kunde_TelefonNummer WHERE booking.Dato = ? ORDER BY Tid, Varighed";
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
         return template.query(sqlvalgtDato, rowMapper, valgtDato);
     }
