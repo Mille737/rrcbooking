@@ -11,7 +11,7 @@
     <form action="/seBooking" method="post">
 
         <input type="time" name="Tid" th:value="${kunde.tid}">
-        <input type="number" min="30" step="30" th:value="${kunde.varighed}">
+        <input type="number" name="Varighed" min="30" step="30" th:value="${kunde.varighed}">
         <input type="number" name="Pax" min="1" th:value="${kunde.pax}">
         <input type="text" name="Kommentar" th:value="${kunde.kommentar}">
         <input type="hidden" name="Telefonnummer" th:value="${kunde.telefonNummer}">

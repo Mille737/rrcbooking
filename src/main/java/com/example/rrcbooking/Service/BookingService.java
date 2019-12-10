@@ -46,14 +46,8 @@ public class BookingService {
 
 
     //find booking på valgt dato
-   /* public List<Kunde> valgtBookingDato(String valgtDato) {
+    public List<Kunde> valgtBookingDato(String valgtDato) {
 
             return bookingRepo.valgtBookingDato(valgtDato);
-    }*/
-
-    public List<Kunde> seBooking(String dagensDato) {
-        System.out.println(dagensDato);
-        return bookingRepo.valgtBookingDato(dagensDato);
     }
-
 }

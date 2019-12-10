@@ -19,7 +19,7 @@
     $( "#dato-form" ).submit( function() {
         //.val() getter value fra input element
         var value = $( "#input-valg-dato" ).val();
-        var url = "seBookinger/" + value;
+        var url = "/seBookinger/" + value;
         window.location.href = url;
         return false;
     } );
@@ -45,7 +45,7 @@
 
 
         <a th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Opdater Booking</a>
-        <a th:href="@{'/slet/' + ${kunde.telefonNummer}}"> Slet booking</a>
+        <a th:href="@{'/slet/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Slet booking</a>
 
         </div>
 </body>

@@ -37,26 +37,23 @@ public class BookingController {
     }
 
     //Se alt relevante booking og kunde info på udvalgt dato
-   /* @GetMapping("/seBookinger/{valgtDato}")
+    @GetMapping("/seBookinger/{valgtDato}")
     public String valgtBookingDato(@PathVariable("valgtDato") String valgtDato, Model model) {
         model.addAttribute("udvalgtbooking", bookingService.valgtBookingDato(valgtDato)); //denne parameter bliver tjekket fra service laget
         return "seBookinger";
-    }*/
+    }
 
-    @GetMapping("/seBookinger/{dagensDato}")
-    public String seBooking(@PathVariable String dagensDato) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date dato = new java.util.Date();
-        dagensDato = formatter.format(dato);
-        bookingService.seBooking(dagensDato);
+   @GetMapping("/seBookinger")
+    public String seBooking() {
         return "seBookinger";
     }
 
     //Slet
-    @GetMapping("/slet/{telefonNummer}")
-    public String slet(@PathVariable("telefonNummer") int telefonNummer, String dato){
+    @GetMapping("/slet/{tele1}/{dato}")
+    public String slet(@PathVariable("tele1") int telefonNummer, @PathVariable("dato") String dato){
         bookingService.sletBooking(telefonNummer, dato);
-        return "redirect:/seBookinger";
+        System.out.println("slettet");
+        return "seBookinger";
     }
 
     //Opdater
