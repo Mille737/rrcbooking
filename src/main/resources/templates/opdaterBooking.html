@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Opdater Booking</title>
+    <!-- Importerer jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <div th:each="kunde :${kunde}">
 
-    <form action="/seBooking" method="post">
+    <form action="/opdaterBooking"  method="post">
 
         <input type="time" name="Tid" th:value="${kunde.tid}">
         <input type="number" name="Varighed" min="30" step="30" th:value="${kunde.varighed}">
@@ -19,9 +21,24 @@
         <input type="date" name="Dato" th:value="${kunde.dato}">
 
         <button type="submit">Opdatér & Gem</button>
-
     </form>
 
+<form id="dato-form">
+    <input type="date" id="input-valg-dato" name="valgtDato" th:value="${kunde.dato}" placeholder="vælg ønsklet dato">
+    <button type="submit">Find Bookinger</button>
+</form>
+<!-- jQuery function der gemmer den valgt dato til brug i url linket til genindlæs siden -->
+<script>
+    // $ er jQuery referencen
+    // parameter er id på ønsket element
+    $( "#dato-form" ).submit( function() {
+        //.val() getter value fra input element
+        var value = $( "#input-valg-dato" ).val();
+        var url = "seBookinger/" + value;
+        window.location.href = url;
+        return false;
+    } );
+</script>
 </div>
 </body>
 </html>

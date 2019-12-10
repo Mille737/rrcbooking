@@ -63,11 +63,11 @@ public class BookingController {
         return "opdaterBooking";
     }
 
-    @PostMapping("/seBooking")
+    @PostMapping("/opdaterBooking")
     public String opdaterNu(@ModelAttribute Kunde kunde){
         bookingService.opdaterBooking(kunde);
         System.out.println("Gemt ja1");
-        return "seBookinger";
+        return "opdaterBooking";
     }
 
 }
