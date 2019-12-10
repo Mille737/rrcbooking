@@ -50,10 +50,10 @@ public class BookingController {
         return "redirect:/";
     }
 
-    //Se
-    @GetMapping("/seBookinger")
-    public String seBookinger(Model model){
-        model.addAttribute("samletBookinger", bookingService.bookingList());
+    //Se alt relevante booking og kunde info på udvalgt dato
+    @GetMapping("/seBookinger/{valgtDato}")
+    public String valgtBookingDato(@PathVariable("valgtDato") String valgtDato, Model model) {
+        model.addAttribute("udvalgtbooking", bookingService.valgtBookingDato(valgtDato)); //denne parameter bliver tjekket fra service laget
         return "seBookinger";
     }
 
@@ -92,10 +92,5 @@ public class BookingController {
     }
 
 
-    //vis bookinger med valgte dato
-    @GetMapping("/dagensDato/{valgtDato}")
-    public String valgtBookingDato(@PathVariable("valgtDato") String vd, Model model) {
-        model.addAttribute("udvalgtbooking", bookingService.valgtBookingDato(vd));
-        return "dagensDato";
-    }
+
 }

@@ -7,8 +7,12 @@ import com.example.rrcbooking.Repository.BookingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Date;
 
 @Service
 public class BookingService {
@@ -42,7 +46,24 @@ public class BookingService {
 
     // find booking på valgt dato
     public List<Kunde> valgtBookingDato(String valgtDato) {
-        return bookingRepo.valgtBookingDato(valgtDato);
+        boolean flag = true;
+        if(flag) {
+
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date dato = new java.util.Date();
+            String dagensDato = formatter.format(dato);
+            System.out.println(dagensDato);
+            return bookingRepo.valgtBookingDato(valgtDato);
+
+        }
+        flag = false;
+        if(flag == false) {
+
+            System.out.println(valgtDato + "hej");
+            return bookingRepo.valgtBookingDato(valgtDato);
+        } else {
+            return bookingRepo.valgtBookingDato(valgtDato);
+        }
     }
 
 }

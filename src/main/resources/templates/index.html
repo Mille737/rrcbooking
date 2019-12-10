@@ -3,31 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Roskilde Racing Center</title>
-
-    <!-- Importerer jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <a href="/opretKunde">Opret Booking </a>
-    <a href="/seBookinger">Se bookninger</a>
+    <a href="/seBookinger/{dagensDato}">Se bookninger</a>
     <a href="/opretMedarbejder">Opret Medarbejder</a>
     <a href="/seMedarbejder">Se Medarbejder</a>
-    <form id="dato-form">
-        <input type="date" id="input-valg-dato" name="valgtDato" placeholder="vælg ønsklet dato">
-        <button type="submit">Find Bookinger</button>
-    </form>
-    <script>
-        // $ er jQuery referencen
-        // parameter er id på ønsket element
-        $( "#dato-form" ).submit( function() {
-            //.val() getter value fra input element
-            var value = $( "#input-valg-dato" ).val();
-            var url = "dagensDato/" + value;
-            window.location.href = url;
-            return false;
-        } );
-    </script>
 
 </body>
 </html>
