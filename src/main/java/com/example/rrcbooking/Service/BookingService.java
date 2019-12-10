@@ -31,6 +31,7 @@ public class BookingService {
     public Kunde findBooking(int telefonNummer, String dato){
         return bookingRepo.findBooking(telefonNummer, dato);
     }
+
     public void opdaterBooking(Kunde kunde){
         bookingRepo.opdaterBooking(kunde);
     }

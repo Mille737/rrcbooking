@@ -11,7 +11,7 @@
 <!-- looper igennem liste af kunder i kunde oprettet i controller -->
 <div th:each="kunde :${kunde}">
     <!-- indtast den nye ønsket data -->
-    <form action="/opdaterBooking"  method="post">
+    <form action="/opdaterBooking"  method="post" id="booking-form">
 
         <label>Tid: </label>
         <input type="time" name="Tid" th:value="${kunde.tid}">
@@ -27,24 +27,6 @@
 
         <button type="submit">Opdatér & Gem</button>
     </form>
-
-<!-- sørger for at siden kommet tilbage til den sammen udvalgte dato -->
-<form id="dato-form">
-    <input type="date" id="input-valg-dato" name="valgtDato" th:value="${kunde.dato}" placeholder="vælg ønsklet dato">
-    <button type="submit">Find Bookinger</button>
-</form>
-<!-- jQuery function der gemmer den valgt dato til brug i url linket til genindlæs siden -->
-<script>
-    // $ er jQuery referencen
-    // parameter er id på ønsket element
-    $( "#dato-form" ).submit( function() {
-        //.val() getter value fra input element
-        var value = $( "#input-valg-dato" ).val();
-        var url = "seBookinger/" + value;
-        window.location.href = url;
-        return false;
-    } );
-</script>
 </div>
 </body>
 </html>

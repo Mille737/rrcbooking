@@ -60,7 +60,7 @@ public class BookingController {
     @PostMapping("/opdaterBooking")
     public String opdaterNu(@ModelAttribute Kunde kunde) {
         bookingService.opdaterBooking(kunde);
-        return "opdaterBooking";
+        return "redirect:/seBookinger/" + kunde.getDato();
     }
 
     //Controller til slet booking med det tilhørende telefonnummer og dato
