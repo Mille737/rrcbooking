@@ -5,12 +5,13 @@
     <title>Opdater Kunde</title>
 </head>
 <body>
-<div th:each="kunde :${sog}">
-
+<!-- looper igennem liste af kunder i find oprettet i controller -->
+<div th:each="kunde :${find}">
+<!-- indtast den nye ønsket data -->
 <form action="/opdaterKunde" method="post">
 
     <input type="text" name="Navn" th:value="${kunde.Navn}">
-    <input type="tel" name="TelefonNummer" th:value="${kunde.telefonNummer}">
+    <input type="tel" name="TelefonNummer" th:value="${kunde.telefonnummer}">
     <input type="email" name="email" th:value="${kunde.email}">
     <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}">
 

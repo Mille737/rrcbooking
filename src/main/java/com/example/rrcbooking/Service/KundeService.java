@@ -7,27 +7,23 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service // det er i dette lag hvor man ville sætter fx. java udregninger ind
 public class KundeService {
 
     @Autowired
     KundeRepo kundeRepo;
 
-    //Opret
-    public void opretKunde(Kunde kunde){
+//Opret - her kaldes opret methoden fra repository laget
+   public void opretKunde(Kunde kunde) {
         kundeRepo.opretKunde(kunde);
     }
 
-    public List<Kunde> kundeList(){
-        return kundeRepo.kundeListe();
+    //Find kunde- her kaldes findKunde methoden fra repository laget
+    public List<Kunde> findKunde(String telefonNummer) {
+        return kundeRepo.findKunde(telefonNummer);
     }
 
-    //Søg på kunde via telefonnummer
-    public List<Kunde> søgKunde(String telefonNummer){
-        return kundeRepo.søgKunde(telefonNummer);
-    }
-
-    //fundetKunde
+    //Fundet kunde- her kaldes fundetKunde methoden fra repository laget
     public void fundetKunde(Kunde kunde) {
         kundeRepo.fundetKunde(kunde);
     }

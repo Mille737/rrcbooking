@@ -9,43 +9,36 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository // Repository inholder SQL sætninger
 public class KundeRepo {
 
     @Autowired
     JdbcTemplate template;
 
-    //Se
-    public List<Kunde> kundeListe(){
-        String sqlalle = "SELECT * FROM kunde";
-        RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
-        return template.query(sqlalle, rowMapper);
-    }
-
-    //Opret
-    public void opretKunde(Kunde kunde){
-        String sqlKunde = "INSERT INTO kunde(telefonNummer, navn, email, firmaNavn) VALUES (?,?,?,?)";
+    ///Opret - her oprettes der en ny kunde
+    public void opretKunde(Kunde kunde) {
+        String sqlKunde = "INSERT INTO kunde(navn, telefonnummer, email, firmaNavn) VALUES (?,?,?,?)";
         template.update(sqlKunde,
-                kunde.getTelefonNummer(),
                 kunde.getNavn(),
+                kunde.getTelefonnummer(),
                 kunde.getEmail(),
                 kunde.getFirmaNavn());
     }
 
-    //find kunde
-    public List<Kunde> søgKunde(String telefonNummer){
+    //Find ønsket kunde med tilhørende telefonnummer
+    public List<Kunde> findKunde(String telefonNummer) {
         String søgsql = "SELECT * FROM Kunde WHERE TelefonNummer = ?";
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
         return template.query(søgsql, rowMapper, telefonNummer);
     }
 
-    //Fundet kunden
-    public void fundetKunde(Kunde kunde){
+    //Fundet kunden med indtastet telefonnummer
+    public void fundetKunde(Kunde kunde) {
         String sqlOpdater = "UPDATE Kunde SET Navn = ?, Email = ?, FirmaNavn = ? WHERE TelefonNummer = ?";
         template.update(sqlOpdater,
                 kunde.getNavn(),
                 kunde.getEmail(),
                 kunde.getFirmaNavn(),
-                kunde.getTelefonNummer());
+                kunde.getTelefonnummer());
     }
 }

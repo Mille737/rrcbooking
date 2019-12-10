@@ -7,44 +7,36 @@ import com.example.rrcbooking.Repository.BookingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Date;
 
-@Service
+
+@Service // det er i dette lag hvor man ville sætter fx. java udregninger ind
 public class BookingService {
 
     @Autowired
     BookingRepo bookingRepo;
 
-    //Opret
+    //Opret - her kaldes opret methoden fra repository laget
     public void opretBooking(Booking booking, Kunde kunde){
         bookingRepo.opretBooking(booking, kunde);
     }
 
+    //Se - her kaldes se methoden fra repository laget
+    public List<Kunde> valgtBookingDato(String valgtDato) {
 
-
-    //Slet
-    public void sletBooking(int telefonNummer, String dato){
-        bookingRepo.sletBooking(telefonNummer, dato);
+        return bookingRepo.valgtBookingDato(valgtDato);
     }
 
-    //Opdater
-    public Kunde findBookingTlf(int telefonNummer, String dato){
-        return bookingRepo.findBookingTlf(telefonNummer, dato);
+    //Opdater - her kaldes de to opdater methoder fra repository laget
+    public Kunde findBooking(int telefonNummer, String dato){
+        return bookingRepo.findBooking(telefonNummer, dato);
     }
-
     public void opdaterBooking(Kunde kunde){
         bookingRepo.opdaterBooking(kunde);
     }
 
-
-    //find booking på valgt dato
-    public List<Kunde> valgtBookingDato(String valgtDato) {
-
-            return bookingRepo.valgtBookingDato(valgtDato);
+    //Slet - her kaldes slet methoden fra repository laget
+    public void sletBooking(int telefonNummer, String dato){
+        bookingRepo.sletBooking(telefonNummer, dato);
     }
 }

@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- form med input felt til at ønskede dato for bookninger -->
+<!-- form med inputfelt til ønskede dato for bookninger -->
 <form id="dato-form">
     <input type="date" id="input-valg-dato" name="valgtDato" placeholder="vælg ønsklet dato">
     <button type="submit">Find Bookinger</button>
@@ -27,6 +27,14 @@
     } );
 </script>
 
+<!-- Print Funktion -->
+<button onclick="myFunction()">Print bookinger</button>
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+
         <!-- Viser bookinger med den udvalgt dato -->
             <table class="table">
             <thead>
@@ -42,25 +50,25 @@
                 <th></th>
             </tr>
             </thead>
-                <div th:each="kunde :${udvalgtbooking}">
+            <!-- looper igennem liste af kunder i udvalgtbooking oprettet i controller -->
+            <div th:each="kunde :${udvalgtbooking}">
             <tbody>
             <tr>
                 <td th:text="${kunde.Tid}"></td>
                 <td th:text="${kunde.Varighed}"></td>
                 <td th:text="${kunde.Pax}"></td>
                 <td th:text="${kunde.Navn}"></td>
-                <td th:text="${kunde.TelefonNummer}"></td>
+                <td th:text="${kunde.Telefonnummer}"></td>
                 <td th:text="${kunde.Kommentar}"></td>
                 <td th:text="${kunde.Dato}"></td>
-                <td><a th:href="@{'/opdaterBooking/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"> Opdater Booking</a></td>
-                <td><a th:href="@{'/slet/' + ${kunde.TelefonNummer} + '/' + ${kunde.dato}}"onclick="return confirm('Tryk OK for at slette medarbejder!');"> Slet booking</a></td>
+                <td><a th:href="@{'/opdaterBooking/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"> Opdater Booking</a></td>
+                <td><a th:href="@{'/slet/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"onclick="return confirm('Tryk OK for at slette medarbejder!');"> Slet booking</a></td>
             </tr>
             </tbody>
-                </div>
+            </div>
+            </table>
 
-        </table>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- JavaScript til Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

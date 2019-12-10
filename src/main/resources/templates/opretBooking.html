@@ -5,24 +5,32 @@
     <title>Opret Booking</title>
 </head>
 <body>
-
 <form action="/opretBooking" method="post">
 
-
-    <input type="tel" name="telefonNummer" th:value="${kunde.telefonNummer}" >
+    <!-- Hentet kunde data  -->
+    <label>Navn: </label>
     <input type="text" name="Navn" th:value="${kunde.Navn}">
+    <label>Telefonnummer: </label>
+    <input type="tel" name="telefonnummer" th:value="${kunde.telefonnummer}" >
+    <label>Email: </label>
     <input type="email" name="email" th:value="${kunde.email}">
+    <label>Firmanavn: </label>
     <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}">
 
-    <input type="date" name="dato" placeholder="Vælg dato">
-    <input type="time" name="tid" placeholder="tidspunkt">
+    <!-- indtast booking data -->
+    <label>Dato: </label>
+    <input type="date" name="dato">
+    <label>Tid: </label>
+    <input type="time" name="tid">
+    <label>Varighed: </label>
     <input type="number" name="varighed" min="30" step="30" placeholder="Varighed">
+    <label>Pax: </label>
     <input type="number" name="pax" min="1" placeholder="Antal personer">
-    <input type="text" name="kommentar" placeholder="Eventuelle kommentar">
+    <label>Eventuel Kommentar: </label>
+    <input type="text" name="kommentar" placeholder="Eventuel kommentar">
 
     <button type="submit">Opret booking</button>
 
 </form>
-
 </body>
 </html>

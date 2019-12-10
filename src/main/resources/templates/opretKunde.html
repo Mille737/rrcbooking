@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Opret Kunde</title>
@@ -7,18 +7,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
-
+    <!-- form til at indtaste kunde data -->
     <form action="/opretKunde" method="post">
-        <input type="tel" name="telefonNummer" placeholder="indtast telefonnummer">
         <input type="text" name="Navn" placeholder="indtast dit navn">
+        <input type="tel" name="telefonnummer" placeholder="indtast telefonnummer">
         <input type="email" name="email" placeholder="indtast E-mail">
         <input type="text" name="firmaNavn" placeholder="indtast firma navn">
         <button type="submit">Videre</button>
 
     </form>
 
+    <!-- form der gemmer indtastet telefonnummer til url -->
     <form id="telefon-form">
-        <input type="tel" id="input-valg-telefon" name="valgtTelefonnummer" placeholder="vælg ønsklet telefonnummer">
+        <input type="tel" id="input-valg-telefon" name="valgtTelefonnummer" placeholder="vælg ønsket telefonnummer">
         <button type="submit">Find Kunde</button>
     </form>
     <script>

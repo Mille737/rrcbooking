@@ -1,39 +1,27 @@
 package com.example.rrcbooking.Model;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 
 
 public class Kunde extends Booking{
 
     @Id
-    private String telefonNummer;
     private String navn;
     private String email;
     private String firmaNavn;
-    private Booking booking;
-    private String tele1;
+    private String telefonnummer;
 
 
     public Kunde() {
     }
 
-    public Kunde(String telefonNummer, String navn, String email, String firmaNavn, Booking booking, String tele1) {
-        this.telefonNummer = telefonNummer;
+    public Kunde(String navn, String email, String firmaNavn, String telefonnummer) {
         this.navn = navn;
         this.email = email;
         this.firmaNavn = firmaNavn;
-        this.booking = new Booking(getBookingID(),getDato(),getTid(),getVarighed(),getPax(),getKommentar());
-        this.tele1 = tele1;
+        this.telefonnummer = telefonnummer;
     }
 
-    public String getTelefonNummer() {
-        return telefonNummer;
-    }
-
-    public void setTelefonNummer(String telefonNummer) {
-        this.telefonNummer = telefonNummer;
-    }
 
     public String getNavn() {
         return navn;
@@ -59,20 +47,12 @@ public class Kunde extends Booking{
         this.firmaNavn = firmaNavn;
     }
 
-    public Booking getBooking() {
-        return booking;
+    public String getTelefonnummer() {
+        return telefonnummer;
     }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
-    }
-
-    public String getTele1() {
-        return tele1;
-    }
-
-    public void setTele1(String tele1) {
-        this.tele1 = tele1;
+    public void setTelefonnummer(String telefonnummer) {
+        this.telefonnummer = telefonnummer;
     }
 }
 

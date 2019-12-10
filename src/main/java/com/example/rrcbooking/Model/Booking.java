@@ -1,8 +1,7 @@
 package com.example.rrcbooking.Model;
 
-
-import javax.persistence.Entity;
 import javax.persistence.Id;
+
 
 public class Booking {
 
@@ -13,7 +12,6 @@ public class Booking {
     private int varighed;
     private int pax;
     private String kommentar;
-    private String testtesttet;
 
     public Booking() {
     }
