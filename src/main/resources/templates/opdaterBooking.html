@@ -8,9 +8,7 @@
 
 <div th:each="kunde :${kunde}">
 
-    <form action="/opdaterBooking" method="post">
-
-
+    <form action="/seBooking" method="post">
 
         <input type="time" name="Tid" th:value="${kunde.tid}">
         <input type="number" min="30" step="30" th:value="${kunde.varighed}">
@@ -23,6 +21,7 @@
         <button type="submit">Opdatér & Gem</button>
 
     </form>
+
 </div>
 </body>
 </html>

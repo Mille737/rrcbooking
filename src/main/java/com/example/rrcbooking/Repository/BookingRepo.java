@@ -65,10 +65,10 @@ public class BookingRepo {
                 kunde.getDato());
         System.out.println("Gemt ja" + kunde.getPax() + sqlOpdater);
     }
+
     public List<Kunde> valgtBookingDato(String valgtDato){
         String sqlvalgtDato = "SELECT * FROM gokarteksamen.booking INNER JOIN gokarteksamen.kunde ON kunde.TelefonNummer = booking.kunde_TelefonNummer WHERE booking.Dato = ?";
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
         return template.query(sqlvalgtDato, rowMapper, valgtDato);
     }
-
 }

@@ -19,7 +19,7 @@
     $( "#dato-form" ).submit( function() {
         //.val() getter value fra input element
         var value = $( "#input-valg-dato" ).val();
-        var url = "" + value;
+        var url = "seBookinger/" + value;
         window.location.href = url;
         return false;
     } );

@@ -44,26 +44,16 @@ public class BookingService {
         bookingRepo.opdaterBooking(kunde);
     }
 
-    // find booking på valgt dato
-    public List<Kunde> valgtBookingDato(String valgtDato) {
-        boolean flag = true;
-        if(flag) {
 
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date dato = new java.util.Date();
-            String dagensDato = formatter.format(dato);
-            System.out.println(dagensDato);
-            return bookingRepo.valgtBookingDato(valgtDato);
+    //find booking på valgt dato
+   /* public List<Kunde> valgtBookingDato(String valgtDato) {
 
-        }
-        flag = false;
-        if(flag == false) {
+            return bookingRepo.valgtBookingDato(valgtDato);
+    }*/
 
-            System.out.println(valgtDato + "hej");
-            return bookingRepo.valgtBookingDato(valgtDato);
-        } else {
-            return bookingRepo.valgtBookingDato(valgtDato);
-        }
+    public List<Kunde> seBooking(String dagensDato) {
+        System.out.println(dagensDato);
+        return bookingRepo.valgtBookingDato(dagensDato);
     }
 
 }
