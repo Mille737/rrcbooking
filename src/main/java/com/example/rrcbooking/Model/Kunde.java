@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 public class Kunde extends Booking{
 
-    @Id
+    @Id @NotNull
     private String navn;
     @NotNull @Email
     private String email;
