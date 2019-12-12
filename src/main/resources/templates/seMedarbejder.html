@@ -12,7 +12,7 @@
 
 </head>
 <header class="header" onclick="window.location.href = '/';">
-    <img th:src="@{~/img/RRClogo.png}">
+    <img src="../static/images/RRClogo.png" th:src="@{/img/RRClogo.png}"/>
 </header>
 <body>
 <div class="hero">
@@ -40,7 +40,7 @@
                 <td th:text="${medarbejder.maEmail}"></td>
 
                 <td><a th:href="@{'/opdaterMedarbejder/' + ${medarbejder.maTelefonNummer}}"> Opdater medarbejder</a></td>
-                <td><a class="slet" th:href="@{'/sletMedarbejder/' + ${medarbejder.maTelefonNummer}}" onclick="return confirm('Tryk OK for at slette medarbejder!');"> Slet medarbejder</a></td>
+                <td><a class="slet" th:href="@{'/sletMedarbejder/' + ${medarbejder.maTelefonNummer}}" onclick="return confirm('Tryk OK for at slette medarbejder!');" style="color: darkred"> Slet medarbejder</a></td>
 
             </tr>
             </tbody>

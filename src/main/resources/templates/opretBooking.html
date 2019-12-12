@@ -12,7 +12,7 @@
 
 </head>
 <header class="header" onclick="window.location.href = '/';">
-    <img th:src="@{img/RRClogo.png}">
+    <img src="../static/images/RRClogo.png" th:src="@{/img/RRClogo.png}"/>
 </header>
 <body>
 <div class="hero">
@@ -41,27 +41,22 @@
         <br>
         <input type="date" name="dato" class="form-control">
         <br>
-        <br>
         <label>Tid: </label>
         <br>
         <input type="time" name="tid" class="form-control">
-        <br>
         <br>
         <label>Varighed: </label>
         <br>
         <input type="number" name="varighed" min="30" step="30" placeholder="Varighed" class="form-control">
         <br>
-        <br>
         <label>Pax: </label>
         <br>
         <input type="number" name="pax" min="1" placeholder="Antal personer" class="form-control">
-        <br>
         <br>
         <label>Eventuel Kommentar: </label>
         <br>
         <input type="text" name="kommentar" placeholder="Eventuel kommentar" class="form-control">
         <br>
-
         <button type="submit" class="btn btn-primary">Opret booking</button>
     </div>
 </form>

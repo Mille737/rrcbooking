@@ -12,7 +12,7 @@
 
 </head>
 <header class="header" onclick="window.location.href = '/';">
-    <img th:src="@{img/RRClogo.png}">
+    <img src="../static/images/RRClogo.png" th:src="@{/img/RRClogo.png}"/>
 </header>
 <body>
 <div class="hero">
@@ -26,24 +26,19 @@
         <br>
         <input type="text" name="navn" th:value="${kunde.navn}" class="form-control">
         <br>
-        <br>
         <label>Telefonnummer</label>
         <br>
         <input type="tel" name="telefonnummer" th:value="${kunde.telefonnummer}" class="form-control">
-        <br>
         <br>
         <label>E-mail</label>
         <br>
         <input type="email" name="email" th:value="${kunde.email}" class="form-control">
         <br>
-        <br>
         <label>Firma navn</label>
         <br>
         <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}" class="form-control">
         <br>
-
         <button type="submit" class="btn btn-primary">Videre til booking</button>
-
     </div>
 
     <!-- JavaScript til Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->

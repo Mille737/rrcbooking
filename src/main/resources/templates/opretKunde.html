@@ -12,7 +12,7 @@
 
 </head>
 <header class="header" onclick="window.location.href = '/';">
-    <img th:src="@{img/RRClogo.png}">
+    <img src="../static/images/RRClogo.png" th:src="@{/img/RRClogo.png}"/>
 </header>
 <body>
 <div class="hero">
@@ -21,25 +21,21 @@
     <div class="form-group">
 
         <label>Navn</label>
-        <br>
         <input type="text" name="Navn" placeholder="indtast dit navn" class="form-control">
         <br>
         <label>Telefonnummer</label>
-        <br>
         <input type="tel" name="telefonnummer" placeholder="indtast telefonnummer" class="form-control">
         <br>
         <label>E-mail</label>
-        <br>
         <input type="email" name="email" placeholder="indtast E-mail" class="form-control">
         <br>
         <label>Firma navn</label>
-        <br>
         <input type="text" name="firmaNavn" placeholder="indtast firma navn" class="form-control">
         <br>
         <button type="submit" class="btn btn-primary">Videre</button>
     </div>
 </form>
-<br><br>
+<br>
 <!-- form der gemmer indtastet telefonnummer til url -->
 <form id="telefon-form" class="form-group">
 
