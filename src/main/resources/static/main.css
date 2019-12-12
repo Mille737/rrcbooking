@@ -6,6 +6,14 @@
     background-color: #bb3c10;
     border: #bb3c10;
 }
+.btn-primary:visited {
+    background-color: #ed5c2a;
+    border: #ed5c2a;
+}
+.btn-primary:active {
+    background-color: #bb3c10;
+    border: #bb3c10;
+}
 
 input:focus {
     border-color: #bb3c10;
