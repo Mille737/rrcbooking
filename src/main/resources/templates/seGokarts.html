@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Gokarts på værksted</title>
+</head>
+<body>
+
+    <a href="/gokartsPaaVaerksted">Gokarts på værksted</a>
+
+<form>
+    <p th:each="gokart :${gokartStatus}">
+
+        <label>Gokart </label><span th:text="${gokart.GokartID}"/>
+        <!-- <label> - På Værksted [</label><span th:text="${gokart.Reperation}"/><label>]</label> -->
+        <a th:href="@{'/opdaterGokarts/' + ${gokart.GokartID}}"> Opdater gokart status</a>
+
+</form>
+
+
+</body>
+</html>
