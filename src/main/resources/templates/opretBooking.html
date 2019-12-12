@@ -3,34 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Opret Booking</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 <form action="/opretBooking" method="post">
+    <div class="form-group">
+        <!-- Hentet kunde data  -->
+        <label>Navn: </label>
+        <br>
+        <input type="text" name="Navn" th:value="${kunde.Navn}" class="form-control">
+        <br>
+        <br>
+        <label>Telefonnummer: </label>
+        <br>
+        <input type="tel" name="telefonnummer" th:value="${kunde.telefonnummer}" class="form-control">
+        <br>
+        <br>
+        <label>Email: </label>
+        <br>
+        <input type="email" name="email" th:value="${kunde.email}" class="form-control">
+        <br>
+        <br>
+        <label>Firmanavn: </label>
+        <br>
+        <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}" class="form-control">
+        <br>
+        <br>
+        <!-- indtast booking data -->
+        <label>Dato: </label>
+        <br>
+        <input type="date" name="dato" class="form-control">
+        <br>
+        <br>
+        <label>Tid: </label>
+        <br>
+        <input type="time" name="tid" class="form-control">
+        <br>
+        <br>
+        <label>Varighed: </label>
+        <br>
+        <input type="number" name="varighed" min="30" step="30" placeholder="Varighed" class="form-control">
+        <br>
+        <br>
+        <label>Pax: </label>
+        <br>
+        <input type="number" name="pax" min="1" placeholder="Antal personer" class="form-control">
+        <br>
+        <br>
+        <label>Eventuel Kommentar: </label>
+        <br>
+        <input type="text" name="kommentar" placeholder="Eventuel kommentar" class="form-control">
+        <br>
 
-    <!-- Hentet kunde data  -->
-    <label>Navn: </label>
-    <input type="text" name="Navn" th:value="${kunde.Navn}">
-    <label>Telefonnummer: </label>
-    <input type="tel" name="telefonnummer" th:value="${kunde.telefonnummer}" >
-    <label>Email: </label>
-    <input type="email" name="email" th:value="${kunde.email}">
-    <label>Firmanavn: </label>
-    <input type="text" name="firmaNavn" th:value="${kunde.firmaNavn}">
-
-    <!-- indtast booking data -->
-    <label>Dato: </label>
-    <input type="date" name="dato">
-    <label>Tid: </label>
-    <input type="time" name="tid">
-    <label>Varighed: </label>
-    <input type="number" name="varighed" min="30" step="30" placeholder="Varighed">
-    <label>Pax: </label>
-    <input type="number" name="pax" min="1" placeholder="Antal personer">
-    <label>Eventuel Kommentar: </label>
-    <input type="text" name="kommentar" placeholder="Eventuel kommentar">
-
-    <button type="submit">Opret booking</button>
-
+        <button type="submit" class="btn btn-primary">Opret booking</button>
+    </div>
 </form>
+
+<!-- JavaScript til Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

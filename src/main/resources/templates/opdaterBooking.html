@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Opdater Booking</title>
-    <!-- Importerer jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -12,21 +16,44 @@
 <div th:each="kunde :${kunde}">
     <!-- indtast den nye ønsket data -->
     <form action="/opdaterBooking"  method="post" id="booking-form">
+        <div class="form-group">
 
-        <label>Tid: </label>
-        <input type="time" name="Tid" th:value="${kunde.tid}">
-        <label>Varighed: </label>
-        <input type="number" name="Varighed" min="30" step="30" th:value="${kunde.varighed}">
-        <label>Pax: </label>
-        <input type="number" name="Pax" min="1" th:value="${kunde.pax}">
-        <label>Kommentar: </label>
-        <input type="text" name="Kommentar" th:value="${kunde.kommentar}">
-        <input type ="hidden" name="Telefonnummer" th:value="${kunde.telefonnummer}">
-        <label>Dato: </label>
-        <input type="date" name="Dato" th:value="${kunde.dato}">
+            <label>Tid: </label>
+            <br>
+            <input type="time" name="Tid" th:value="${kunde.tid}" class="form-control">
+            <br>
+            <br>
+            <label>Varighed: </label>
+            <br>
+            <input type="number" name="Varighed" min="30" step="30" th:value="${kunde.varighed}" class="form-control">
+            <br>
+            <br>
+            <label>Pax: </label>
+            <br>
+            <input type="number" name="Pax" min="1" th:value="${kunde.pax}" class="form-control">
+            <br>
+            <br>
+            <label>Kommentar: </label>
+            <br>
+            <input type="text" name="Kommentar" th:value="${kunde.kommentar}" class="form-control">
+            <input type ="hidden" name="Telefonnummer" th:value="${kunde.telefonnummer}" class="form-control">
+            <br>
+            <br>
+            <label>Dato: </label>
+            <br>
+            <input type="date" name="Dato" th:value="${kunde.dato}" class="form-control">
+            <br>
 
-        <button type="submit">Opdatér & Gem</button>
+            <button type="submit" class="btn btn-primary">Opdatér & Gem</button>
+
+        </div>
     </form>
+
+    <!-- JavaScript til Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </div>
 </body>
 </html>

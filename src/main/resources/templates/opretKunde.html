@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Opret Kunde</title>
-    <!-- Importerer jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-    <!-- form til at indtaste kunde data -->
-    <form action="/opretKunde" method="post">
-        <input type="text" name="Navn" placeholder="indtast dit navn">
-        <input type="tel" name="telefonnummer" placeholder="indtast telefonnummer">
-        <input type="email" name="email" placeholder="indtast E-mail">
-        <input type="text" name="firmaNavn" placeholder="indtast firma navn">
-        <button type="submit">Videre</button>
 
-    </form>
+<!-- form til at indtaste kunde data -->
+<form action="/opretKunde" method="post">
+    <div class="form-group">
 
-    <!-- form der gemmer indtastet telefonnummer til url -->
-    <form id="telefon-form">
-        <input type="tel" id="input-valg-telefon" name="valgtTelefonnummer" placeholder="vælg ønsket telefonnummer">
-        <button type="submit">Find Kunde</button>
-    </form>
-    <script>
-        // $ er jQuery referencen
-        // parameter er id på ønsket element
-        $( "#telefon-form" ).submit( function() {
-            //.val() getter value fra input element
-            var value = $( "#input-valg-telefon" ).val();
-            var url = "opdaterKunde/" + value;
-            window.location.href = url;
-            return false;
-        } );
-    </script>
+        <label>Navn</label>
+        <br>
+        <input type="text" name="Navn" placeholder="indtast dit navn" class="form-control">
+        <br>
+        <br>
+        <label>Telefonnummer</label>
+        <br>
+        <input type="tel" name="telefonnummer" placeholder="indtast telefonnummer" class="form-control">
+        <br>
+        <br>
+        <label>E-mail</label>
+        <br>
+        <input type="email" name="email" placeholder="indtast E-mail" class="form-control">
+        <br>
+        <br>
+        <label>Firma navn</label>
+        <br>
+        <input type="text" name="firmaNavn" placeholder="indtast firma navn" class="form-control">
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Videre</button>
+    </div>
+</form>
+
+<!-- form der gemmer indtastet telefonnummer til url -->
+<form id="telefon-form" class="form-group">
+
+    <input type="tel" id="input-valg-telefon" name="valgtTelefonnummer" placeholder="vælg ønsket telefonnummer" class="form-control">
+    <button type="submit" class="btn btn-primary">Find Kunde</button>
+
+</form>
+<script>
+    // $ er jQuery referencen
+    // parameter er id på ønsket element
+    $( "#telefon-form" ).submit( function() {
+        //.val() getter value fra input element
+        var value = $( "#input-valg-telefon" ).val();
+        var url = "opdaterKunde/" + value;
+        window.location.href = url;
+        return false;
+    } );
+</script>
+
+<!-- JavaScript til Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

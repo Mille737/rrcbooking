@@ -12,7 +12,7 @@
 <!-- form med inputfelt til ønskede dato for bookninger -->
 <form id="dato-form">
     <input type="date" id="input-valg-dato" name="valgtDato" placeholder="vælg ønsklet dato">
-    <button type="submit">Find Bookinger</button>
+    <button type="submit" class="btn btn-primary">Find Bookinger</button>
 </form>
 <!-- jQuery function der gemmer den valgt dato til brug i url linket til genindlæs siden -->
 <script>
@@ -28,7 +28,7 @@
 </script>
 
 <!-- Print Funktion -->
-<button onclick="myFunction()">Print bookinger</button>
+<button onclick="myFunction()" class="btn btn-primary">Print bookinger</button>
 <script>
     function myFunction() {
         window.print();
@@ -62,7 +62,7 @@
                 <td th:text="${kunde.Kommentar}"></td>
                 <td th:text="${kunde.Dato}"></td>
                 <td><a th:href="@{'/opdaterBooking/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"> Opdater Booking</a></td>
-                <td><a th:href="@{'/slet/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"onclick="return confirm('Tryk OK for at slette medarbejder!');"> Slet booking</a></td>
+                <td><a th:href="@{'/slet/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"onclick="return confirm('Tryk OK for at slette booking!');"> Slet booking</a></td>
             </tr>
             </tbody>
             </div>
