@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: #ed5c2a;
+    border: #ed5c2a;
+}
+.btn-primary:hover {
+    background-color: #bb3c10;
+    border: #bb3c10;
+}
+
+input:focus {
+    border-color: #bb3c10;
+}
+
