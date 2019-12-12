@@ -1,15 +1,21 @@
 package com.example.rrcbooking.Model;
 
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 
 public class Booking {
 
     @Id
     private int bookingID;
+    @NotNull
     private String dato;
+    @NotNull
     private String tid;
+    @NotNull @Min(30)
     private int varighed;
+    @NotNull
     private int pax;
     private String kommentar;
 

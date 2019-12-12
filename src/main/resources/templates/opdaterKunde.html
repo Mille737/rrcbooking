@@ -24,15 +24,15 @@
 
         <label>Navn</label>
         <br>
-        <input type="text" name="navn" th:value="${kunde.navn}" class="form-control">
+        <input type="text" name="navn" th:value="${kunde.navn}" class="form-control" required>
         <br>
         <label>Telefonnummer</label>
         <br>
-        <input type="tel" name="telefonnummer" th:value="${kunde.telefonnummer}" class="form-control">
+        <input type="tel" name="telefonnummer" th:value="${kunde.telefonnummer}" class="form-control" pattern="[0-9]{8}">
         <br>
         <label>E-mail</label>
         <br>
-        <input type="email" name="email" th:value="${kunde.email}" class="form-control">
+        <input type="email" name="email" th:value="${kunde.email}" class="form-control" required>
         <br>
         <label>Firma navn</label>
         <br>

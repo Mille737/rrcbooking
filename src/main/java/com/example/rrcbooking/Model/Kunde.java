@@ -1,14 +1,18 @@
 package com.example.rrcbooking.Model;
 
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 
 public class Kunde extends Booking{
 
     @Id
     private String navn;
+    @NotNull @Email
     private String email;
     private String firmaNavn;
+    @NotNull
     private String telefonnummer;
 
 

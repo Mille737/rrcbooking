@@ -1,12 +1,16 @@
 package com.example.rrcbooking.Model;
 
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 public class Medarbejder {
 
-    @Id
+    @Id @NotNull
     private String maTelefonNummer;
+    @NotNull @Email
     private String maEmail;
+    @NotNull
     private String maNavn;
 
     public Medarbejder() {

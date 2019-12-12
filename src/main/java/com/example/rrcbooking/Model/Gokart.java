@@ -1,8 +1,11 @@
 package com.example.rrcbooking.Model;
 
+import javax.validation.constraints.NotNull;
+
 public class Gokart {
 
     private int gokartID;
+    @NotNull
     private String reperation;
 
 

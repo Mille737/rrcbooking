@@ -21,7 +21,7 @@
         <div class="form-group">
             <label>GOKART</label><p th:text="${gokart.GokartID}"/>
             <input type="hidden" name="gokartID" th:value="${gokart.GokartID}">
-            <input type="text" name="reperation" th:value="${gokart.Reperation}" class="form-control">
+            <input type="text" name="reperation" th:value="${gokart.Reperation}" class="form-control" required>
 
             <button type="submit" class="btn btn-primary">Opdatér & Gem</button>
 

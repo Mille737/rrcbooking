@@ -24,15 +24,15 @@
 
             <label>Tid: </label>
             <br>
-            <input type="time" name="Tid" th:value="${kunde.tid}" class="form-control">
+            <input type="time" name="Tid" th:value="${kunde.tid}" class="form-control" required>
             <br>
             <label>Varighed: </label>
             <br>
-            <input type="number" name="Varighed" min="30" step="30" th:value="${kunde.varighed}" class="form-control">
+            <input type="number" name="Varighed" min="30" step="30" th:value="${kunde.varighed}" class="form-control" required>
             <br>
             <label>Pax: </label>
             <br>
-            <input type="number" name="Pax" min="1" th:value="${kunde.pax}" class="form-control">
+            <input type="number" name="Pax" min="1" th:value="${kunde.pax}" class="form-control" required>
             <br>
             <label>Kommentar: </label>
             <br>
@@ -41,7 +41,7 @@
             <br>
             <label>Dato: </label>
             <br>
-            <input type="date" name="Dato" th:value="${kunde.dato}" class="form-control">
+            <input type="date" name="Dato" th:value="${kunde.dato}" class="form-control" required>
             <br><br>
             <button type="submit" class="btn btn-primary">Opdatér & Gem</button>
 

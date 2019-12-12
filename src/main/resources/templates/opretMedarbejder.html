@@ -21,17 +21,17 @@
 
         <label>Navn</label>
         <br>
-        <input type="text" name="maNavn" placeholder="indtast dit navn " class="form-control">
+        <input type="text" name="maNavn" placeholder="indtast dit navn " class="form-control" required>
         <br>
         <br>
         <label>Telefonnummer</label>
         <br>
-        <input type="tel" name="maTelefonNummer" placeholder="indtast telefonnummer" class="form-control">
+        <input type="tel" name="maTelefonNummer" placeholder="indtast telefonnummer" class="form-control" pattern="[0-9]{8}" required>
         <br>
         <br>
         <label>E-mail</label>
         <br>
-        <input type="email" name="maEmail" placeholder="indtast E-mail" class="form-control">
+        <input type="email" name="maEmail" placeholder="indtast E-mail" class="form-control" required>
         <br>
 
         <button type="submit" class="btn btn-primary" >Opret Medarbejder</button>

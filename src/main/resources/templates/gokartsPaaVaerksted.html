@@ -23,20 +23,15 @@
     <table class="table">
         <thead>
         <tr>
-            <th> GOKART </th>
+            <th>GOKART</th>
             <th></th>
         </tr>
         </thead>
-
     <div th:each="gokart :${gokartsPV}" >
-
         <tbody>
         <tr>
-
             <td th:text="${gokart.GokartID}"></td>
-
             <td><a th:href="@{'/opdaterGokarts/' + ${gokart.GokartID}}"> Opdater gokart status</a></td>
-
         </tr>
         </tbody>
     </div>
