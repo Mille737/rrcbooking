@@ -27,7 +27,7 @@ public class MedarbejderController {
     public String oprettetMedarbejder(@ModelAttribute Medarbejder medarbejder){
         medarbejderService.opretMedarbejder(medarbejder);
         System.out.println("gemt medarbejder");
-        return "redirect:/";
+        return "redirect:/seMedarbejder";
     }
 
     //Se

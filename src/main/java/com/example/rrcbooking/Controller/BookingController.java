@@ -33,7 +33,7 @@ public class BookingController {
     @PostMapping("/opretBooking")
     public String oprettetBooking(@ModelAttribute Booking booking, Kunde kunde) {
         bookingService.opretBooking(booking, kunde);
-        return "redirect:/";
+        return "redirect:/seBookinger" + "/" + kunde.getDato();
     }
 
     //Contreoller til seBooking siden
