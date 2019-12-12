@@ -11,8 +11,11 @@
     <link rel="stylesheet" th:href="@{~/main.css}">
 
 </head>
+<header class="header" onclick="window.location.href = '/';">
+    <img th:src="@{img/RRClogo.png}">
+</header>
 <body>
-
+<div class="hero">
 <!-- looper igennem liste af kunder i kunde oprettet i controller -->
 <div th:each="kunde :${kunde}">
     <!-- indtast den nye ønsket data -->
@@ -56,5 +59,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </div>
+</div>
 </body>
+<footer class="footer">
+    <p class="company-info">Tlf: +45 70 25 00 86 &emsp; | &emsp; E-mail: info@roskilderacingcenter.dk</p>
+</footer>
 </html>

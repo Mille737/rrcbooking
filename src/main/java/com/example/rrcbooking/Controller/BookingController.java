@@ -23,6 +23,8 @@ public class BookingController {
         return "index";
     }
 
+
+
     //Controller til at vise opretBooking siden
     @GetMapping("/opretBooking")
     public String opretBooking(){
@@ -65,8 +67,8 @@ public class BookingController {
 
     //Controller til slet booking med det tilhørende telefonnummer og dato
     @GetMapping("/slet/{telefonnummer}/{dato}")
-    public String slet(@PathVariable("telefonnummer") int telefonnummer, @PathVariable("dato") String dato) {
+    public String slet(@ModelAttribute Kunde kunde, @PathVariable("telefonnummer") int telefonnummer, @PathVariable("dato") String dato) {
         bookingService.sletBooking(telefonnummer, dato);
-        return "seBookinger";
+        return "redirect:/seBookinger/" + kunde.getDato();
     }
 }
