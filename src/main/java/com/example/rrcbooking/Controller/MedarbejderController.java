@@ -39,14 +39,14 @@ public class MedarbejderController {
 
     //Slet
     @GetMapping("/sletMedarbejder/{maTelefonNummer}")
-    public String slet(@PathVariable("maTelefonNummer") int maTelefonNummer){
+    public String slet(@PathVariable("maTelefonNummer") String maTelefonNummer){
         medarbejderService.sletMedarbejder(maTelefonNummer);
         return "redirect:/seMedarbejder";
     }
 
     //Opdater
     @GetMapping("/opdaterMedarbejder/{maTelefonNummer}")
-    public String opdaterMedarbejder(@PathVariable("maTelefonNummer") int maTelefonNummer, Model model){
+    public String opdaterMedarbejder(@PathVariable("maTelefonNummer") String maTelefonNummer, Model model){
         model.addAttribute("medarbejder", medarbejderService.findMedarbejderTlf(maTelefonNummer));
         System.out.println("test");
         return "opdaterMedarbejder";

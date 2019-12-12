@@ -33,13 +33,13 @@ public class MedarbejderRepo {
     }
 
     //slet
-    public void sletMedarbejder(int maTelefonNummer) {
+    public void sletMedarbejder(String maTelefonNummer) {
         String sletsql = "DELETE FROM medarbejder WHERE maTelefonNummer=?";
         template.update(sletsql, maTelefonNummer);
     }
 
     //Update
-    public Medarbejder findMedarbejderTlf(int maTelefonNummer){
+    public Medarbejder findMedarbejderTlf(String maTelefonNummer){
         String sqlFind = "SELECT * FROM medarbejder WHERE maTelefonNummer = ?";
         RowMapper<Medarbejder> rowMapper = new BeanPropertyRowMapper<>(Medarbejder.class);
         return template.queryForObject(sqlFind, rowMapper, maTelefonNummer);

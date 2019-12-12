@@ -23,12 +23,12 @@ public class MedarbejderService {
         return medarbejderRepo.medarbejderListe();
     }
     //slet
-    public void sletMedarbejder(int maTelefonNummer){
+    public void sletMedarbejder(String maTelefonNummer){
         medarbejderRepo.sletMedarbejder(maTelefonNummer);
     }
 
     //Opdater
-    public Medarbejder findMedarbejderTlf(int maTelefonNummer){
+    public Medarbejder findMedarbejderTlf(String maTelefonNummer){
         return medarbejderRepo.findMedarbejderTlf(maTelefonNummer);
     }
 

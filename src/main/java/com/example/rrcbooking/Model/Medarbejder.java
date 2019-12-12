@@ -5,14 +5,14 @@ import javax.persistence.Id;
 public class Medarbejder {
 
     @Id
-    private int maTelefonNummer;
+    private String maTelefonNummer;
     private String maEmail;
     private String maNavn;
 
     public Medarbejder() {
     }
 
-    public Medarbejder(String maNavn, int maTelefonNummer, String email) {
+    public Medarbejder(String maNavn, String maTelefonNummer, String email) {
         this.maNavn = maNavn;
         this.maTelefonNummer = maTelefonNummer;
         this.maEmail = email;
@@ -26,11 +26,11 @@ public class Medarbejder {
         this.maNavn = maNavn;
     }
 
-    public int getMaTelefonNummer() {
+    public String getMaTelefonNummer() {
         return maTelefonNummer;
     }
 
-    public void setMaTelefonNummer(int maTelefonNummer) {
+    public void setMaTelefonNummer(String maTelefonNummer) {
         this.maTelefonNummer = maTelefonNummer;
     }
 
