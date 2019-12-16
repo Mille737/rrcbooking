@@ -16,8 +16,20 @@
 </header>
 <body>
 <div class="hero">
-<button onclick="window.location.href = '/seGokarts' " class="btn btn-primary">Tilbage</button>
-
+    <div class="flex-container">
+        <div class="flex-element">
+            <button onclick="window.location.href = '/seGokarts' " class="btn btn-primary">Tilbage</button>
+        </div>
+        <div class="flex-element">
+            <!-- Print Funktion -->
+            <button onclick="myFunction()" class="btn btn-primary" id="print">Print</button>
+            <script>
+                function myFunction() {
+                    window.print();
+                }
+            </script>
+        </div>
+    </div>
 <form>
 
     <table class="table">

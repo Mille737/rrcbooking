@@ -16,8 +16,20 @@
 </header>
 <body>
 <div class="hero">
-
+    <div class="flex-container">
+    <div class="flex-element">
     <button onclick="window.location.href = '/opretMedarbejder'" class="btn btn-primary">Opret Medarbejder</button>
+    </div>
+    <div class="flex-element">
+        <!-- Print Funktion -->
+        <button onclick="myFunction()" class="btn btn-primary" id="print">Print</button>
+        <script>
+            function myFunction() {
+                window.print();
+            }
+        </script>
+    </div>
+    </div>
 
     <table class="table">
         <thead>
