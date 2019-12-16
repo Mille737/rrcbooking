@@ -72,8 +72,9 @@
                 <td th:text="${kunde.Telefonnummer}"></td>
                 <td th:text="${kunde.Kommentar}"></td>
                 <td th:text="${kunde.Dato}"></td>
-                <td><a th:href="@{'/opdaterBooking/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"> Opdater Booking</a></td>
-                <td><a class="slet" th:href="@{'/slet/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"onclick="return confirm('Tryk OK for at slette booking!');" style="color: darkred"> Slet booking</a></td>
+                <td><a th:href="@{'/opdaterBooking/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"> Opdater </a></td>
+                <td><a class="slet" th:href="@{'/slet/' + ${kunde.Telefonnummer} + '/' + ${kunde.dato}}"onclick="
+                return confirm('Tryk OK for at slette booking!');" style="color: darkred"> Slet </a></td>
             </tr>
             </tbody>
             </div>

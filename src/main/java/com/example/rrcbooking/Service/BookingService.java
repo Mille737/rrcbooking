@@ -41,3 +41,6 @@ public class BookingService {
         bookingRepo.sletBooking(telefonNummer, dato);
     }
 }
+
+
+

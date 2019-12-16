@@ -60,4 +60,3 @@ public class Kunde extends Booking{
     }
 }
 
-

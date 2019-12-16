@@ -21,7 +21,6 @@ public class KundeController {
     //Controller til at vise opretKunde siden
     @GetMapping("/opretKunde")
     public String opretKunde() {
-        System.out.println();
         return "opretKunde";
     }
 
@@ -29,15 +28,16 @@ public class KundeController {
     @PostMapping("/opretKunde")
     public String oprettetKunde(@ModelAttribute Kunde kunde) {
         kundeService.opretKunde(kunde);
-        System.out.println("gemt kunde");
         return "opretBooking";
     }
+
     //Controller til at søge på et telefonnummer og finde den passende kunde data
     @GetMapping("/opdaterKunde/{telefonNummer}")
     public String find(@PathVariable("telefonNummer") String telefonNummer, Model model) {
         model.addAttribute("find", kundeService.findKunde(telefonNummer));
         return "opdaterKunde";
     }
+
     //Controller til at se den fundet kunde data og mulighed for opdatering
     @PostMapping("/opdaterKunde")
     public String fundetKunde(@ModelAttribute Kunde kunde) {
