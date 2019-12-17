@@ -1,6 +1,7 @@
 package com.example.rrcbooking.Service;
 
 
+import com.example.rrcbooking.IGokart;
 import com.example.rrcbooking.Model.Gokart;
 import com.example.rrcbooking.Model.Medarbejder;
 import com.example.rrcbooking.Repository.GokartRepo;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GokartService {
+public class GokartService implements IGokart {
 
     @Autowired
     GokartRepo gokartRepo;

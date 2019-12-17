@@ -1,5 +1,6 @@
 package com.example.rrcbooking.Repository;
 
+import com.example.rrcbooking.IKunde;
 import com.example.rrcbooking.Model.Kunde;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository // Repository inholder SQL sætninger
-public class KundeRepo {
+public class KundeRepo implements IKunde {
 
     @Autowired
     JdbcTemplate template;

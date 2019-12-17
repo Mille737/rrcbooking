@@ -1,5 +1,6 @@
 package com.example.rrcbooking.Service;
 
+import com.example.rrcbooking.IMedarbejder;
 import com.example.rrcbooking.Model.Kunde;
 import com.example.rrcbooking.Model.Medarbejder;
 import com.example.rrcbooking.Repository.MedarbejderRepo;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MedarbejderService {
+public class MedarbejderService implements IMedarbejder {
 
     @Autowired
     MedarbejderRepo medarbejderRepo;
@@ -19,7 +20,7 @@ public class MedarbejderService {
         medarbejderRepo.opretMedarbejder(medarbejder);
     }
 
-    public List<Medarbejder> medarbejderList() {
+    public List<Medarbejder> medarbejderListe() {
         return medarbejderRepo.medarbejderListe();
     }
     //slet

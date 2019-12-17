@@ -1,6 +1,7 @@
 
 package com.example.rrcbooking.Repository;
 
+import com.example.rrcbooking.IGokart;
 import com.example.rrcbooking.Model.Gokart;
 import com.example.rrcbooking.Model.Medarbejder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class GokartRepo {
+public class GokartRepo implements IGokart {
 
     @Autowired
     JdbcTemplate template;

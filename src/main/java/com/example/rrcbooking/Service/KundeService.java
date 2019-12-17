@@ -1,5 +1,6 @@
 package com.example.rrcbooking.Service;
 
+import com.example.rrcbooking.IKunde;
 import com.example.rrcbooking.Model.Kunde;
 import com.example.rrcbooking.Repository.KundeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service // det er i dette lag hvor man ville sætter fx. java udregninger ind
-public class KundeService {
+public class KundeService implements IKunde {
 
     @Autowired
     KundeRepo kundeRepo;
 
-//Opret - her kaldes opret methoden fra repository laget
+   //Opret - her kaldes opret methoden fra repository laget
    public void opretKunde(Kunde kunde) {
         kundeRepo.opretKunde(kunde);
     }

@@ -1,5 +1,6 @@
 package com.example.rrcbooking.Repository;
 
+import com.example.rrcbooking.IBooking;
 import com.example.rrcbooking.Model.Booking;
 import com.example.rrcbooking.Model.Kunde;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 
 @Repository // Repository inholder SQL sætninger
-public class BookingRepo {
+public class BookingRepo implements IBooking {
 
     @Autowired // hvad er dette
     JdbcTemplate template;

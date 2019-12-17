@@ -1,5 +1,6 @@
 package com.example.rrcbooking.Service;
 
+import com.example.rrcbooking.IBooking;
 import com.example.rrcbooking.Model.Booking;
 import com.example.rrcbooking.Model.Kunde;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 @Service // det er i dette lag hvor man ville sætter fx. java udregninger ind
-public class BookingService {
+public class BookingService implements IBooking {
 
     @Autowired
     BookingRepo bookingRepo;
