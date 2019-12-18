@@ -1,3 +1,4 @@
+//Nadia og Nicolaj
 package com.example.rrcbooking.Controller;
 
 import com.example.rrcbooking.Model.Gokart;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 
 @Controller
 public class GokartController {

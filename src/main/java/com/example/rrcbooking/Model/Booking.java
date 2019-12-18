@@ -1,3 +1,4 @@
+//Nadia og Nicolaj
 package com.example.rrcbooking.Model;
 
 import javax.persistence.Id;
@@ -30,7 +31,6 @@ public class Booking {
         this.pax = pax;
         this.kommentar = kommentar;
     }
-
 
     public int getBookingID() {
         return bookingID;

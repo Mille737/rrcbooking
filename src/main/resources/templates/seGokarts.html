@@ -1,3 +1,5 @@
+<!-- Nicolaj -->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,7 +18,7 @@
 </header>
 <body>
 <div class="hero">
-        <button onclick="window.location.href = '/gokartsPaaVaerksted' " class="btn btn-primary">Gokarts på værksted</button>
+    <button onclick="window.location.href = '/gokartsPaaVaerksted' " class="btn btn-primary">Gokarts på værksted</button>
 
     <table class="table">
         <thead>
@@ -26,16 +28,16 @@
         </tr>
         </thead>
 
-    <div th:each="gokart :${gokartStatus}">
-        <tbody>
-        <tr>
+        <div th:each="gokart :${gokartStatus}">
+            <tbody>
+            <tr>
 
-            <td th:text="${gokart.GokartID}"></td>
-            <td><a th:href = "@{'/opdaterGokarts/' + ${gokart.GokartID}}"> Opdater status</a></td>
+                <td th:text="${gokart.GokartID}"></td>
+                <td><a th:href = "@{'/opdaterGokarts/' + ${gokart.GokartID}}"> Opdater status</a></td>
 
-        </tr>
-        </tbody>
-    </div>
+            </tr>
+            </tbody>
+        </div>
     </table>
 
     <!-- JavaScript til Bootstrap: jQuery first, then Popper.js, then Bootstrap JS -->

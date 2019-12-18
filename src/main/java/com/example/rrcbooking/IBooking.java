@@ -1,9 +1,11 @@
+//Camille
 package com.example.rrcbooking;
 
 import com.example.rrcbooking.Model.Booking;
 import com.example.rrcbooking.Model.Kunde;
 
 import java.util.List;
+
 
 public interface IBooking {
 

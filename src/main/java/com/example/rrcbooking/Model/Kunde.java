@@ -1,3 +1,4 @@
+//Camille og Christian
 package com.example.rrcbooking.Model;
 
 import javax.persistence.Id;
@@ -25,7 +26,6 @@ public class Kunde extends Booking{
         this.firmaNavn = firmaNavn;
         this.telefonnummer = telefonnummer;
     }
-
 
     public String getNavn() {
         return navn;

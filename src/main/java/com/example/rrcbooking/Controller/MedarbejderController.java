@@ -1,6 +1,6 @@
+//Camille og Christian
 package com.example.rrcbooking.Controller;
 
-import com.example.rrcbooking.Model.Kunde;
 import com.example.rrcbooking.Model.Medarbejder;
 import com.example.rrcbooking.Service.MedarbejderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MedarbejderController {
 
-    //dependency injections
     @Autowired
     MedarbejderService medarbejderService;
 
@@ -33,7 +32,7 @@ public class MedarbejderController {
     //Se
     @GetMapping("/seMedarbejder")
     public String seMedarbejder(Model model){
-        model.addAttribute("medarbejderInfo", medarbejderService.medarbejderList());
+        model.addAttribute("medarbejderInfo", medarbejderService.medarbejderListe());
         return "seMedarbejder";
     }
 

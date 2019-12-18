@@ -1,3 +1,4 @@
+//Camille og Christian
 package com.example.rrcbooking.Repository;
 
 import com.example.rrcbooking.IKunde;
@@ -9,6 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 @Repository // Repository inholder SQL sætninger
 public class KundeRepo implements IKunde {

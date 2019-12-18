@@ -1,3 +1,4 @@
+//Camille og Christian
 package com.example.rrcbooking.Service;
 
 import com.example.rrcbooking.IKunde;
@@ -8,14 +9,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service // det er i dette lag hvor man ville sætter fx. java udregninger ind
 public class KundeService implements IKunde {
 
     @Autowired
     KundeRepo kundeRepo;
 
-   //Opret - her kaldes opret methoden fra repository laget
-   public void opretKunde(Kunde kunde) {
+    //Opret - her kaldes opret methoden fra repository laget
+    public void opretKunde(Kunde kunde) {
         kundeRepo.opretKunde(kunde);
     }
 

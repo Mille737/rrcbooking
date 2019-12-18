@@ -1,8 +1,10 @@
+//Camille
 package com.example.rrcbooking;
 
 import com.example.rrcbooking.Model.Medarbejder;
 
 import java.util.List;
+
 
 public interface IMedarbejder {
 

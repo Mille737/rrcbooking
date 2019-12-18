@@ -1,4 +1,4 @@
-
+//Nadia og Nicolaj
 package com.example.rrcbooking.Repository;
 
 import com.example.rrcbooking.IGokart;
@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 @Repository
 public class GokartRepo implements IGokart {

@@ -1,8 +1,9 @@
+//Camille og Christian
 package com.example.rrcbooking.Repository;
 
 import com.example.rrcbooking.IMedarbejder;
-import com.example.rrcbooking.Model.Kunde;
 import com.example.rrcbooking.Model.Medarbejder;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 @Repository
 public class MedarbejderRepo implements IMedarbejder {

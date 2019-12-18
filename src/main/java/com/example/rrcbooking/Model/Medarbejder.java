@@ -1,3 +1,4 @@
+//Camille og Christian
 package com.example.rrcbooking.Model;
 
 import javax.persistence.Id;

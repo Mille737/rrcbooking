@@ -1,3 +1,4 @@
+//Nadia og Nicolaj
 package com.example.rrcbooking.Repository;
 
 import com.example.rrcbooking.IBooking;
@@ -16,9 +17,8 @@ import java.util.List;
 @Repository // Repository inholder SQL sætninger
 public class BookingRepo implements IBooking {
 
-    @Autowired // hvad er dette
+    @Autowired
     JdbcTemplate template;
-
 
     //Opret - her oprettes der en ny booking
     public void opretBooking(Booking booking, Kunde kunde) {

@@ -1,3 +1,4 @@
+//Nadia og Nicolaj
 package com.example.rrcbooking.Controller;
 
 import com.example.rrcbooking.Model.Booking;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @Controller //Controller gør det muligt at vis den ønkset url (html siderne)
 public class BookingController {
 
-    //dependency injections???
     @Autowired
     BookingService bookingService;
 
@@ -22,8 +22,6 @@ public class BookingController {
     public String Index(){
         return "index";
     }
-
-
 
     //Controller til at vise opretBooking siden
     @GetMapping("/opretBooking")
