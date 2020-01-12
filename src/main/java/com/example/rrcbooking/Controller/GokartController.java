@@ -2,8 +2,8 @@
 package com.example.rrcbooking.Controller;
 
 import com.example.rrcbooking.Model.Gokart;
-import com.example.rrcbooking.Model.Medarbejder;
 import com.example.rrcbooking.Service.GokartService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +23,7 @@ public class GokartController {
         return "seGokarts";
     }
 
-    //Se Gokarts på værksted
+    //Se Gokarts paa vaerksted
     @GetMapping("/gokartsPaaVaerksted")
     public String gokartsPV(Model model){
         model.addAttribute("gokartsPV", gokartService.gokartListePaaVaerksted());
@@ -32,12 +32,14 @@ public class GokartController {
 
     //Opdater Gokart status
     @GetMapping("/opdaterGokarts/{GokartID}")
+    //@PathVariable henter værdien fra "GokartID"
     public String opdaterGokartStatus(@PathVariable("GokartID") int GokartID, Model model){
         model.addAttribute("gokart", gokartService.findGokartID(GokartID));
         return "opdaterGokarts";
     }
 
     @PostMapping("/opdaterGokarts")
+    //@ModelAttribute binder værdier fra inputfields til objektet.
     public String opdaterGokartStatus(@ModelAttribute Gokart gokart){
         gokartService.opdaterGokartStatus(gokart);
         return "redirect:/seGokarts";

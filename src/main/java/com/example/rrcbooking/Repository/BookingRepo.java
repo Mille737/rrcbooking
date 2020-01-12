@@ -36,7 +36,11 @@ public class BookingRepo implements IBooking {
     //Se - her bliver alle bookinger med udvalgt dato vist
     public List<Kunde> valgtBookingDato(String valgtDato){
         String sqlvalgtDato = "SELECT * FROM gokarteksamen.booking INNER JOIN gokarteksamen.kunde ON kunde.TelefonNummer = booking.kunde_TelefonNummer WHERE booking.Dato = ? ORDER BY Tid, Varighed";
+
+        //RowMapper laver en instans/objekt af Kunde klassen (Som nedarver Booking).
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
+
+        //query laver en forespørgsel om flere rækker fra databasen.
         return template.query(sqlvalgtDato, rowMapper, valgtDato);
     }
 
@@ -45,7 +49,11 @@ public class BookingRepo implements IBooking {
     // Opdater - her finder man den ønsket booking udfra telefonnummer og dato
     public Kunde findBooking(int telefonNummer, String dato) {
         String sqlfind = "SELECT * FROM Kunde INNER JOIN Booking ON Kunde.TelefonNummer = booking.Kunde_TelefonNummer WHERE Booking.Kunde_TelefonNummer = ? AND booking.Dato = ?";
+
+        //RowMapper laver en instans/objekt af Kunde klassen (Som nedarver Booking).
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
+
+        //queryForObject en forespørgsel for en single row eller enkelt værdi fra databasen.
         return template.queryForObject(sqlfind, rowMapper, telefonNummer, dato);
     }
 
@@ -59,7 +67,7 @@ public class BookingRepo implements IBooking {
                 kunde.getKommentar(),
                 kunde.getTelefonnummer(),
                 kunde.getDato());
-        System.out.println("Gemt ja" + kunde.getPax() + sqlOpdater);
+        System.out.println("Gemt ja" + kunde.getPax());
     }
 
     //Slet - her slettes en allerede gemt booking

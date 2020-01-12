@@ -3,6 +3,7 @@ package com.example.rrcbooking.Controller;
 
 import com.example.rrcbooking.Model.Medarbejder;
 import com.example.rrcbooking.Service.MedarbejderService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +24,7 @@ public class MedarbejderController {
     }
 
     @PostMapping("/opretMedarbejder")
+    //@ModelAttribute binder værdier fra inputfields til objektet.
     public String oprettetMedarbejder(@ModelAttribute Medarbejder medarbejder){
         medarbejderService.opretMedarbejder(medarbejder);
         System.out.println("gemt medarbejder");
@@ -38,6 +40,7 @@ public class MedarbejderController {
 
     //Slet
     @GetMapping("/sletMedarbejder/{maTelefonNummer}")
+    //@PathVariable henter værdien fra "matelefonNummer"
     public String slet(@PathVariable("maTelefonNummer") String maTelefonNummer){
         medarbejderService.sletMedarbejder(maTelefonNummer);
         return "redirect:/seMedarbejder";
@@ -45,6 +48,7 @@ public class MedarbejderController {
 
     //Opdater
     @GetMapping("/opdaterMedarbejder/{maTelefonNummer}")
+    //@PathVariable henter værdien fra "matelefonNummer"
     public String opdaterMedarbejder(@PathVariable("maTelefonNummer") String maTelefonNummer, Model model){
         model.addAttribute("medarbejder", medarbejderService.findMedarbejderTlf(maTelefonNummer));
         System.out.println("test");
@@ -52,6 +56,7 @@ public class MedarbejderController {
     }
 
     @PostMapping("/opdaterMedarbejder")
+    //@ModelAttribute binder værdier fra inputfields til objektet.
     public String opdaterNuMedarbejder(@ModelAttribute Medarbejder medarbejder){
         medarbejderService.opdaterMedarbejder(medarbejder);
         System.out.println("test medarbejder opdateret");

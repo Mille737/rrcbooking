@@ -31,7 +31,11 @@ public class MedarbejderRepo implements IMedarbejder {
     //Se
     public List<Medarbejder> medarbejderListe(){
         String sqlalle = "SELECT * FROM medarbejder";
+
+        //RowMapper laver en instans/objekt af Medarbejder klassen.
         RowMapper<Medarbejder> rowMapper = new BeanPropertyRowMapper<>(Medarbejder.class);
+
+        //query laver en forespørgsel om flere rækker fra databasen.
         return template.query(sqlalle, rowMapper);
     }
 
@@ -44,7 +48,11 @@ public class MedarbejderRepo implements IMedarbejder {
     //Update
     public Medarbejder findMedarbejderTlf(String maTelefonNummer){
         String sqlFind = "SELECT * FROM medarbejder WHERE maTelefonNummer = ?";
+
+        //RowMapper laver en instans/objekt af Medarbejder klassen.
         RowMapper<Medarbejder> rowMapper = new BeanPropertyRowMapper<>(Medarbejder.class);
+
+        //queryForObject en forespørgsel for en single row eller enkelt værdi fra databasen.
         return template.queryForObject(sqlFind, rowMapper, maTelefonNummer);
     }
 

@@ -27,6 +27,7 @@ public class KundeController {
 
     //Controller til at gemme det indtaste kunde data på opretKunde siden
     @PostMapping("/opretKunde")
+    //@ModelAttribute binder værdier fra inputfields til objektet.
     public String oprettetKunde(@ModelAttribute Kunde kunde) {
         kundeService.opretKunde(kunde);
         return "opretBooking";
@@ -34,6 +35,7 @@ public class KundeController {
 
     //Controller til at søge på et telefonnummer og finde den passende kunde data
     @GetMapping("/opdaterKunde/{telefonNummer}")
+    //@PathVariable henter værdien fra "telefonNummer"
     public String find(@PathVariable("telefonNummer") String telefonNummer, Model model) {
         model.addAttribute("find", kundeService.findKunde(telefonNummer));
         return "opdaterKunde";
@@ -41,6 +43,7 @@ public class KundeController {
 
     //Controller til at se den fundet kunde data og mulighed for opdatering
     @PostMapping("/opdaterKunde")
+    //@ModelAttribute binder værdier fra inputfields til objektet.
     public String fundetKunde(@ModelAttribute Kunde kunde) {
         kundeService.fundetKunde(kunde);
         return "opretBooking";

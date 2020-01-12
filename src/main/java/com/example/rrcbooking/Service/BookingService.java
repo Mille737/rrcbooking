@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-@Service // det er i dette lag hvor man ville sætter fx. java udregninger ind
+@Service // det er i dette lag hvor man ville saetter fx. java udregninger ind
 public class BookingService implements IBooking {
 
     @Autowired

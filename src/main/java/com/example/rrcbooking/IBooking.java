@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface IBooking {
 
-    void opretBooking(Booking booking, Kunde kund);
+    void opretBooking(Booking booking, Kunde kunde);
 
     List<Kunde> valgtBookingDato(String valgtDato);
 

@@ -15,6 +15,7 @@ import java.util.List;
 @Repository // Repository inholder SQL sætninger
 public class KundeRepo implements IKunde {
 
+
     @Autowired
     JdbcTemplate template;
 
@@ -28,11 +29,15 @@ public class KundeRepo implements IKunde {
                 kunde.getFirmaNavn());
     }
 
-    //Find ønsket kunde med tilhørende telefonnummer
+    //Find oensket kunde med tilhoerende telefonnummer
     public List<Kunde> findKunde(String telefonNummer) {
-        String søgsql = "SELECT * FROM Kunde WHERE TelefonNummer = ?";
+        String soegsql = "SELECT * FROM Kunde WHERE TelefonNummer = ?";
+
+        //RowMapper laver en instans/objekt af Kunde klassen (Som nedarver Booking).
         RowMapper<Kunde> rowMapper = new BeanPropertyRowMapper<>(Kunde.class);
-        return template.query(søgsql, rowMapper, telefonNummer);
+
+        //query laver en forespørgsel om flere rækker fra databasen.
+        return template.query(soegsql, rowMapper, telefonNummer);
     }
 
     //Fundet kunden med indtastet telefonnummer
